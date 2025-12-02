@@ -1,4 +1,4 @@
-🔐 Privacy-Preserving Similarity Search
+ 🔐# Privacy-Preserving Similarity Search
 
 This project implements a secure similarity search framework that enables users to retrieve similar data records without revealing sensitive information to the cloud server. It combines Paillier Homomorphic Encryption and Vantage Point (VP) Trees to perform efficient similarity searches directly on encrypted data.
 
