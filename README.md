@@ -1,8 +1,8 @@
- 🔐# Privacy-Preserving Similarity Search
+#  🔐  Privacy-Preserving Similarity Search
 
 This project implements a secure similarity search framework that enables users to retrieve similar data records without revealing sensitive information to the cloud server. It combines Paillier Homomorphic Encryption and Vantage Point (VP) Trees to perform efficient similarity searches directly on encrypted data.
 
-📌 Key Features
+## 📌 Key Features
 
 End-to-end encryption: Both dataset and user queries remain encrypted during storage and processing.
 
@@ -14,7 +14,7 @@ User-secure workflow: Only the user can decrypt the final results.
 
 Streamlit UI: Simple and interactive interface for uploading data, encrypting queries, and retrieving encrypted results.
 
-🧠 Technologies Used
+## 🧠 Technologies Used
 
 Paillier Homomorphic Encryption
 
@@ -26,7 +26,7 @@ NumPy / SciPy
 
 Streamlit (for web interface)
 
-🚀 How It Works
+## 🚀 How It Works
 
 User encrypts dataset and query using Paillier HE.
 
@@ -40,7 +40,7 @@ Cloud returns encrypted results to the user.
 
 User decrypts results locally, ensuring complete data confidentiality.
 
-📌 Applications
+## 📌 Applications
 
 Healthcare: Encrypted patient record comparison
 
