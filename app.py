@@ -106,20 +106,19 @@ class MultiLayerEncryption:
 # =====================
 # DOWNLOAD UTILITY
 # =====================
-def create_download_link_text_and_cipher(text_df: pd.DataFrame, cipher_list, filename):
-    cipher_cols = {}
-    if len(cipher_list) > 0:
-        n_cipher = len(cipher_list[0])
-        for j in range(n_cipher):
-            cipher_cols[f"enc_col_{j}"] = [row[j] for row in cipher_list]
+def create_download_link(data, filename):
+    """
+    Creates a base64 encoded download link for Streamlit.
+    """
+    try:
+        if isinstance(data, (bytes, bytearray)):
+            b64 = base64.b64encode(data).decode()
+        else:
+            b64 = base64.b64encode(str(data).encode()).decode()
 
-    download_df = pd.concat([text_df.reset_index(drop=True), pd.DataFrame(cipher_cols)], axis=1)
-    csv_buffer = io.StringIO()
-    download_df.to_csv(csv_buffer, index=False)
-
-    b64 = base64.b64encode(csv_buffer.getvalue().encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="{filename}">Download Encrypted Dataset (text + ciphertexts)</a>'
-    return href
+        return f'<a href="data:file/text;base64,{b64}" download="{filename}">Download {filename}</a>'
+    except Exception as e:
+        return f"Error creating download link: {e}"
 
 # =====================
 # VP-TREE IMPLEMENTATION
@@ -217,7 +216,19 @@ def main():
                 st.stop()
 
             st.write("Raw Dataset:")
-            st.dataframe(np.vstack([header, cleaned_dataset]))
+            header = [
+                "Patient ID",
+                "Age",
+                "Weight",
+                "Blood Pressure",
+                "Cholesterol",
+                "Disease Risk Score"
+            ]
+
+            df = pd.DataFrame(cleaned_dataset, columns=header)
+            st.dataframe(df)
+
+            
              # 🎬 Step Animation
             st.markdown("""
                 <div style="display:flex;align-items:center;gap:15px;">
@@ -293,6 +304,7 @@ def main():
                     else:
                         decrypted_results = vp_tree.search(query_vector, k)
                         st.write(f"Top {k} Similar Records:")
+                       
 
                         # Merge text + numeric columns
                         final_output = []
@@ -308,8 +320,21 @@ def main():
                                     merged.append(cleaned_dataset[idx][text_idx])
                                     text_idx += 1
                             final_output.append(merged)
+                             # Define your column headers
+                        header = [
+                            "Patient ID",
+                            "Age",
+                            "Weight",
+                            "Blood Pressure",
+                            "Cholesterol",
+                            "Disease Risk Score"
+                        ]
 
-                        st.dataframe(np.vstack([header, final_output]))
+                        # Convert to DataFrame and display
+                        df = pd.DataFrame(final_output, columns=header)
+                        st.dataframe(df)
+
+        
                         privacy_logger.log_search_operation(query_vector, decrypted_results)
                 except ValueError:
                     st.error("Query input contains invalid numeric values.")
