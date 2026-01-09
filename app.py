@@ -248,7 +248,13 @@ def main():
                     reduced_data = pca.fit_transform(cleaned_dataset)
 
                     if plot_type == "Scatter Plot":
-                        fig = px.scatter(x=reduced_data[:, 0], y=reduced_data[:, 1], title="Dataset Scatter Plot (PCA Reduced)")
+                        fig = px.scatter(x=reduced_data[:, 0], y=reduced_data[:, 1], title="Dataset Scatter Plot (PCA Reduced)",
+                              labels={
+                                    "x": "Principal Component 1",
+                                    "y": "Principal Component 2"
+                              }             
+                        )
+                        
                         st.plotly_chart(fig)
 
                         st.markdown("""
@@ -259,7 +265,12 @@ def main():
                         """)
 
                     elif plot_type == "Histogram":
-                        fig = px.histogram(x=reduced_data[:, 0], title="Dataset Histogram (First PCA Component)")
+                        fig = px.histogram(x=reduced_data[:, 0], title="Dataset Histogram (First PCA Component)",
+                                     labels={
+                                        "x": "Principal Component 1",
+                                        "y": "Principal Component 2"
+                                    }        
+                        )
                         st.plotly_chart(fig)
 
                         st.markdown("""
@@ -311,5 +322,6 @@ def main():
 # Run the app
 if __name__ == "__main__":
     main()
+
 
 
