@@ -259,6 +259,7 @@ def main():
 
                         st.markdown("""
                         ### 📌 Scatter Plot Insights
+                        - PCA (Principal Component Analysis) is a dimensionality-reduction technique that transforms high-dimensional data into fewer uncorrelated components while preserving as much variance (important information) as possible.
                         - Each point represents a dataset record after dimension reduction.
                         - Points closer together imply higher similarity.
                         - Helps identify possible clusters and groupings.
@@ -275,6 +276,7 @@ def main():
 
                         st.markdown("""
                         ### 📌 Histogram Insights
+                        - PCA (Principal Component Analysis) is a dimensionality-reduction technique that transforms high-dimensional data into fewer uncorrelated components while preserving as much variance (important information) as possible.
                         - Shows distribution of dataset values along the primary PCA component.
                         - Identifies most common value ranges and spread.
                         - Useful to detect variance and skewness.
@@ -322,6 +324,7 @@ def main():
 # Run the app
 if __name__ == "__main__":
     main()
+
 
 
 
