@@ -92,7 +92,7 @@ privacy-preserving-similarity-search/
 ├── similarity.py
 └── requirements.txt
 ```
-
+---
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the Repository
@@ -112,34 +112,54 @@ pip install -r requirements.txt
 streamlit run app.py
 
 ```
+---
 
 ## 📸 Screenshots
 
 <div align="center">
 
-### 🏠 **Home/Initial Interface**
+###  **Home/Initial Interface**
 *Dataset Upload Page*
 
-![Home Interface](screenshots/mode_selection.png)
+![Home Interface](Screenshots/1.Home_Interface.png)
 
-### 💀 **Attacker Control Panel**
-*Professional attack deployment interface with real-time monitoring*
+###  **Dataset Preview Page**
+*Preview Raw Dataset before Encryption*
 
-![Attacker Mode](screenshots/attacker_mode.png)
+![Data Preview](Screenshots/2.Data_Preveiw.png)
 
-### 😰 **Victim Recovery Interface**
-*Experience the psychological pressure of ransomware attacks*
+###  **Encryption Visualization page**
+*Visaualize Encrypted Dataset in a Structured JSON-like format*
 
-![Victim Mode](screenshots/victim_mode.png)
+![Encryption Page](Screenshots/3.Encryption_page.png)
 
-### 🎬 **Fullscreen Ransom Note**
-*Cinema-quality 1920x1080 threat presentation*
+###  **VP-Tree Build Completion Page**
+*Multiple Decrypted Vantage-points(VPs) used to structure the VP-Tree*
 
-![Ransom Note](screenshots/ransom_note.png)
+![VP-Tree](Screenshots/4.VP-Tree.png)
+
+###  **Dataset Embedding Visualization**
+*A 2D PCA-reduced scatter plot where each point corresponds to a dataset record*
+
+![Scatter plot](Screenshots/5.PCA_Scatter_Plot.png)
+
+*The Histogram shows thefrequency distribution of reduced dataset values*
+
+![Histogram](Screenshots/6.Histogram.png)
+
+###  **Query Input and Similarity Search Results**
+*Query Entry and Selection of Number of similar results(k)*
+
+![Query Input](Screenshots/7.Query_input_and_Result-1.png)
+
+![K-Means and Results](Screenshots/8.No.of_K-Means_and_Result.png)
 ---
 </div>
 
+---
+
 ## 📊 Applications
+
 
 - 🏥 **Healthcare**  
   Secure comparison of encrypted patient records without exposing sensitive medical data.
