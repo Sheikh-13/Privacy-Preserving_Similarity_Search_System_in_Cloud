@@ -82,7 +82,16 @@ User → Decrypt Results Locally
    User decrypts results using the private key.
 
 ---
-
+## 📂 Project Structure
+```
+privacy-preserving-similarity-search/
+│
+├── app.py
+├── encryption.py
+├── vp_tree.py
+├── similarity.py
+└── requirements.txt
+```
 
 ## ⚙️ Installation & Setup
 
