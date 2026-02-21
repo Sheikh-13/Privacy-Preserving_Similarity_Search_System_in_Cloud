@@ -112,6 +112,33 @@ pip install -r requirements.txt
 streamlit run app.py
 
 ```
+
+## 📸 Screenshots
+
+<div align="center">
+
+### 🏠 **Home/Initial Interface**
+*Dataset Upload Page*
+
+![Home Interface](screenshots/mode_selection.png)
+
+### 💀 **Attacker Control Panel**
+*Professional attack deployment interface with real-time monitoring*
+
+![Attacker Mode](screenshots/attacker_mode.png)
+
+### 😰 **Victim Recovery Interface**
+*Experience the psychological pressure of ransomware attacks*
+
+![Victim Mode](screenshots/victim_mode.png)
+
+### 🎬 **Fullscreen Ransom Note**
+*Cinema-quality 1920x1080 threat presentation*
+
+![Ransom Note](screenshots/ransom_note.png)
+---
+</div>
+
 ## 📊 Applications
 
 - 🏥 **Healthcare**  
